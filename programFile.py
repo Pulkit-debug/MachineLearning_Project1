@@ -79,4 +79,4 @@ f.write(str(pred[1]*100))
 f.close()
 
 #code is of CNN
-#CNN code
+#CNN
