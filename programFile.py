@@ -13,7 +13,7 @@ import tensorflow as tf
 
 
 import matplotlib.pyplot as plt
-get_ipython().run_line_magic('matplotlib', 'inline # Only use this if using iPython')
+#get_ipython().run_line_magic('matplotlib', 'inline # Only use this if using iPython')
 image_index = 7777 # You may select anything up to 60,000
 print(y_train[image_index]) # The label is 8
 plt.imshow(x_train[image_index], cmap='Greys')
@@ -48,10 +48,9 @@ from keras.layers import Dense, Conv2D, Dropout, Flatten, MaxPooling2D
 # Creating a Sequential Model and adding the layers
 model = Sequential()
 model.add(Conv2D(28, kernel_size=(3,3), input_shape=input_shape))
-model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(MaxPooling2D(pool_size=(1, 1)))
 model.add(Flatten()) # Flattening the 2D arrays for fully connected layers
-model.add(Dense(128, activation=tf.nn.relu))
-model.add(Dropout(0.2))
+model.add(Dense(64, activation=tf.nn.relu))
 model.add(Dense(10,activation=tf.nn.softmax))
 
 
@@ -72,10 +71,10 @@ print("Test accuracy: %.2%%", test_acc)
 predic = model.evaluate(x_test, y_test)
 
 print(predic[1]*100)
-acc = print("%.2%%" % (test_acc*100))
-
+#acc = print("%.2%%" % (test_acc*100))
+model.save("cnn_model.h5")
 f = open("prediction.txt", "w")
-f.write(str(pred[1]*100))
+f.write(str(predic[1]*100))
 f.close()
 
 #code is of CNN
