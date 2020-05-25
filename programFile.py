@@ -72,9 +72,11 @@ predic = model.evaluate(x_test, y_test)
 
 print(predic[1]*100)
 #acc = print("%.2%%" % (test_acc*100))
-model.save("cnn_model.h5")
+#model.save("cnn_model.h5")
 f = open("prediction.txt", "w")
-f.write(str(predic[1]*100))
+stringparse=str(predic[1]*100)
+ac=stringparse[0]+stringparse[1]
+f.write(ac)
 f.close()
 
 #code is of CNN
