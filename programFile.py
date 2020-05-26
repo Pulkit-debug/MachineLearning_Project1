@@ -80,4 +80,4 @@ f.write(ac)
 f.close()
 
 #code is of CNN
-#CNN
+#CNN code
