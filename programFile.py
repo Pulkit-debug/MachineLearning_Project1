@@ -63,7 +63,7 @@ from keras.optimizers import Adam
 model.compile(optimizer='adam', 
               loss='sparse_categorical_crossentropy', 
               metrics=['accuracy'])
-model.fit(x=x_train,y=y_train, epochs=20)
+model.fit(x=x_train,y=y_train, epochs=1)
 
 
 # In[6]:
