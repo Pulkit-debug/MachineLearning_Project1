@@ -79,5 +79,4 @@ ac=stringparse[0]+stringparse[1]
 f.write(ac)
 f.close()
 
-#code is of CNN
 #CNN code
